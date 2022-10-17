@@ -1,0 +1,81 @@
+PS /home/aa-a716902> Get-Azresource -name ACS07W320N2
+PS /home/aa-a716902> Get-Azresource name ACS07W320N2 
+Get-AzResource: A positional parameter cannot be found that accepts argument 'name'.
+PS /home/aa-a716902> Select-AzSubscription -Subscription 1fd4eaa2-e0f5-4e47-a395-12bad3a0cd73
+
+Name                                     Account                                          SubscriptionName                                 Environment                                      TenantId
+----                                     -------                                          ----------------                                 -----------                                      --------
+sub-ads-eus2-entbusops-dev-001 (1fd4eaa… MSI@50342                                        sub-ads-eus2-entbusops-dev-001                   AzureCloud                                       7a24eae8-33b9-449a-83f5-361634c821ce
+
+PS /home/aa-a716902> Select-AzSubscription -Subscription 62aea6d8-c056-4e64-8168-e4bcc1f06f61
+
+Name                                     Account                                          SubscriptionName                                 Environment                                      TenantId
+----                                     -------                                          ----------------                                 -----------                                      --------
+sub-ads-eus2-entbusops-prd-001 (62aea6d… MSI@50342                                        sub-ads-eus2-entbusops-prd-001                   AzureCloud                                       7a24eae8-33b9-449a-83f5-361634c821ce
+
+PS /home/aa-a716902> Get-AzResource -Name ACS09W501
+
+Name              : ACS09W501
+ResourceGroupName : rg-ads-eus2-entbusops-prd-ihub-batch-001
+ResourceType      : Microsoft.Compute/virtualMachines
+Location          : eastus2
+ResourceId        : /subscriptions/62aea6d8-c056-4e64-8168-e4bcc1f06f61/resourceGroups/rg-ads-eus2-entbusops-prd-ihub-batch-001/providers/Microsoft.Compute/virtualMachines/ACS09W501
+Tags              : 
+                    Name                Value                    
+                    ==================  =========================
+                    Environment         PRD                      
+                    DataClassification  Confidential             
+                    SupportGroup        ADCS.Cloud.Infrastructure
+                    Dept                IT                       
+                    BillTo              Vulcan                   
+                    Role                App                      
+                    AppID               TBD                      
+                    AppName             Integration Hub Batch    
+                    AppOwner            Tom Pugh                 
+                    
+
+
+PS /home/aa-a716902> Get-AzResource -Name ACS09W501 |ConvertTo-Jason
+ConvertTo-Jason: The term 'ConvertTo-Jason' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS /home/aa-a716902> Get-AzResource -Name ACS09W501 |ConvertTo-Json 
+{
+  "ResourceId": "/subscriptions/62aea6d8-c056-4e64-8168-e4bcc1f06f61/resourceGroups/rg-ads-eus2-entbusops-prd-ihub-batch-001/providers/Microsoft.Compute/virtualMachines/ACS09W501",
+  "Id": "/subscriptions/62aea6d8-c056-4e64-8168-e4bcc1f06f61/resourceGroups/rg-ads-eus2-entbusops-prd-ihub-batch-001/providers/Microsoft.Compute/virtualMachines/ACS09W501",
+  "Identity": {
+    "PrincipalId": "ccb6c613-d8cf-43ec-b0e6-a4d1412d210e",
+    "TenantId": "7a24eae8-33b9-449a-83f5-361634c821ce",
+    "Type": "SystemAssigned",
+    "UserAssignedIdentities": null
+  },
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "ACS09W501",
+  "Name": "ACS09W501",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": null,
+  "ResourceGroupName": "rg-ads-eus2-entbusops-prd-ihub-batch-001",
+  "Type": "Microsoft.Compute/virtualMachines",
+  "ResourceType": "Microsoft.Compute/virtualMachines",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "AppID": "TBD",
+    "AppName": "Integration Hub Batch",
+    "AppOwner": "Tom Pugh",
+    "BillTo": "Vulcan",
+    "DataClassification": "Confidential",
+    "Dept": "IT",
+    "Environment": "PRD",
+    "Role": "App",
+    "SupportGroup": "ADCS.Cloud.Infrastructure"
+  },
+  "TagsTable": "\nName                Value                    \r\n==================  =========================\r\nEnvironment         PRD                      \r\nDataClassification  Confidential             \r\nSupportGroup        ADCS.Cloud.Infrastructure\r\nDept                IT                       \r\nBillTo              Vulcan                   \r\nRole                App                      \r\nAppID               TBD                      \r\nAppName             Integration Hub Batch    \r\nAppOwner            Tom Pugh                 \r\n",
+  "SubscriptionId": "62aea6d8-c056-4e64-8168-e4bcc1f06f61",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

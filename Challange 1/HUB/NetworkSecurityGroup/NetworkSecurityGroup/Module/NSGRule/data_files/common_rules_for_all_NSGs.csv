@@ -1,0 +1,6 @@
+priority,name,description,direction,access,protocol,source_address_prefix,source_address_prefixes,source_port_range,source_port_ranges,source_application_security_group_ids,destination_address_prefix,destination_address_prefixes,destination_port_range,destination_port_ranges,destination_application_security_group_ids
+2500,common_QualysScan,Allow Qualys to scan subnet,Inbound,Allow,*,,${Qualys_Scanner_IPs},*,,,VirtualNetwork,,*,,
+3000,common_allow_in_icmp_ads_vnet,Allow ICMP from ADS internal network,Inbound,Allow,ICMP,10.0.0.0/8,,*,,,VirtualNetwork,,*,,
+3010,common_allow_in_rdp_onprem_vnet,Allow RDP from on-prem jump hosts,Inbound,Allow,TCP,,${OnPrem_Jump_Host_IPs},*,,,VirtualNetwork,,3389,,
+3020,common_allow_in_ssh_onprem_vnet,Allow SSH from on-prem jump hosts,Inbound,Allow,TCP,,${OnPrem_Jump_Host_IPs},*,,,VirtualNetwork,,22,,
+3030,common_allow_in_any_within_subnet,Allow all rule for intra-subnet traffic,Inbound,Allow,*,,${This_Subnet},*,,,,${This_Subnet},*,,

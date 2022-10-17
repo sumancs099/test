@@ -1,0 +1,60 @@
+
+PLEASE NOTE  :: ALL These configurations are done by me in my DEV envirnment , I am ready to explain in details during the call 
+
+
+
+
+
+
+
+
+I have created the infra based on Azure with Terraform code. Being a infra tech person I have focused on mainly infra side..
+
+This infra is based on HUB and SPOKE topology 
+
+HUB :
+
+In HUB side , thus is planned in such way all core services will be deployed -
+
+
+Considering 3 tier architecture >>  Application , Presentation , data 
+
+
+Phase 1 :>>>
+
+1. CORE subscription & Peering connection 
+2. Core Subnets ( INt , EXT , PUB , Private , Gateway , VPN , Express route shared services etc )
+3. Load Balancer ( Public & Private )
+4. Firewall >>  Internal , External Firewall , VPN 
+5. My DNS , Infoblox are in Onprem location 
+6. NSG , ROute tables
+
+
+
+Phase 2 >>
+
+Application and App services and APIM will be deployed.
+
+I am not much strong in this area so couldnot write those codes
+
+
+
+PHASE 3 >>>
+
+1. Storage account 
+2. Private endpoints 
+3. Monitoring 
+4. database will be deployed 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++NOTE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+NOTE :: I have attached a JPG file for the basic design. Than I can explain in details during the call as below  
+
+1. Detail infra design
+2. Connectivity between Azure Devops to terraform 
+3. Deployment structure at CI / CD model as DEVOPs
+
+
+
+
